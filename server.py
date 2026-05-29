@@ -111,8 +111,8 @@ def arp_spoof(target_ip, target_mac, gateway_ip, gateway_mac):
 
 @app.route("/")
 def home():
-    return send_from_directory(app.static_folder, "index.html")
-
+    return "Server is running and working correctly"
+    
 @app.route("/arp/start", methods=["POST"])
 def arp_start():
     global running, attack_thread
