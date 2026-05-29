@@ -151,7 +151,7 @@ def arp_stop():
     running = False
     return jsonify({"success": True, "message": "ARP Spoofing Stopped"})
 
-@app.post("/encrypt/file")
+@app.post("encrypt/file")
 def encrypt_file():
     if "file" not in request.files:
         return jsonify({"success": False, "message": "No file uploaded"})
@@ -163,7 +163,7 @@ def encrypt_file():
     ok, msg = encryptor.encrypt_file(temp_path)
     return jsonify({"success": ok, "message": msg})
 
-@app.post("/decrypt/file")
+@app.post("decrypt/file")
 def decrypt_file():
     if "file" not in request.files:
         return jsonify({"success": False, "message": "No file uploaded"})
@@ -175,7 +175,7 @@ def decrypt_file():
     ok, msg = encryptor.decrypt_file(temp_path)
     return jsonify({"success": ok, "message": msg})
 
-@app.post("/encrypt/folder")
+@app.post("encrypt/folder")
 def encrypt_folder():
     files = request.files.getlist("files")
     if not files:
