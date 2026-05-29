@@ -753,14 +753,28 @@ def start_real_listener():
 
 @app.route("/api/real/clients", methods=["GET"])
 def get_real_clients():
-    listener = get_real_listener()
-    clients = listener.get_clients_info()
-    
-    return jsonify({
-        "success": True,
-        "clients": clients,
-        "count": len(clients)
-    })
+    try:
+        listener = get_real_listener()
+
+        if not listener:
+            return jsonify({
+                "success": False,
+                "error": "Listener not initialized"
+            }), 500
+
+        clients = listener.get_clients_info() or []
+
+        return jsonify({
+            "success": True,
+            "clients": clients,
+            "count": len(clients)
+        })
+
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
 
 @app.route("/api/real/command", methods=["POST"])
 def send_real_command():
